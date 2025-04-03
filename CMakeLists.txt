@@ -7,14 +7,32 @@ cmake_policy(SET CMP0079 NEW)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Ensure we use system libraries
+set(CMAKE_FIND_FRAMEWORK LAST)
+set(CMAKE_FIND_APPBUNDLE LAST)
+
 # Find required packages
-find_package(Protobuf 3.20.0 REQUIRED)
+find_package(Protobuf 25.1.0 REQUIRED CONFIG)
 find_package(gRPC 1.60.0 CONFIG REQUIRED)
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 
 # Configure Abseil with version compatible with gRPC 1.60.0
-pkg_check_modules(ABSL REQUIRED IMPORTED_TARGET absl_base=20230802 absl_synchronization=20230802 absl_strings=20230802 absl_status=20230802 absl_statusor=20230802)
+pkg_check_modules(ABSL REQUIRED IMPORTED_TARGET
+    absl_base=20230802
+    absl_synchronization=20230802
+    absl_strings=20230802
+    absl_status=20230802
+    absl_statusor=20230802
+    absl_log_internal_message=20230802
+    absl_log_internal_check_op=20230802
+    absl_log_internal_conditions=20230802
+    absl_log_internal_format=20230802
+    absl_log_internal_globals=20230802
+    absl_log_internal_log_sink_set=20230802
+    absl_log_internal_nullguard=20230802
+    absl_log_internal_proto=20230802
+)
 
 # Configure RE2 with version compatible with gRPC 1.60.0
 pkg_check_modules(RE2 REQUIRED IMPORTED_TARGET re2=11.0.0)

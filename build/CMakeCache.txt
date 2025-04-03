@@ -208,7 +208,7 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
-GRPC_CPP_PLUGIN:FILEPATH=/usr/bin/grpc_cpp_plugin
+GRPC_CPP_PLUGIN:FILEPATH=/usr/local/bin/grpc_cpp_plugin
 
 //Value Computed by CMake
 MPointers2_BINARY_DIR:STATIC=/home/thedegeo/Documents/T/MPointers2/build
@@ -219,15 +219,6 @@ MPointers2_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 MPointers2_SOURCE_DIR:STATIC=/home/thedegeo/Documents/T/MPointers2
 
-//Path to a library.
-OPENSSL_CRYPTO_LIBRARY:FILEPATH=/usr/lib/libcrypto.so
-
-//Path to a file.
-OPENSSL_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib/libssl.so
-
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 
@@ -235,58 +226,31 @@ PKG_CONFIG_ARGN:STRING=
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a program.
-PROTOC:FILEPATH=/usr/bin/protoc
+PROTOC:FILEPATH=/usr/local/bin/protoc
 
 //The directory containing a CMake configuration file for Protobuf.
 Protobuf_DIR:PATH=/usr/lib/cmake/protobuf
 
 //Path to a file.
-Protobuf_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-Protobuf_LIBRARY_DEBUG:FILEPATH=/usr/lib/libprotobuf.so
-
-//Path to a library.
-Protobuf_LIBRARY_RELEASE:FILEPATH=/usr/lib/libprotobuf.so
-
-//Path to a library.
-Protobuf_LITE_LIBRARY_DEBUG:FILEPATH=/usr/lib/libprotobuf-lite.so
-
-//Path to a library.
-Protobuf_LITE_LIBRARY_RELEASE:FILEPATH=/usr/lib/libprotobuf-lite.so
-
-//The Google Protocol Buffers Compiler
-Protobuf_PROTOC_EXECUTABLE:FILEPATH=/usr/bin/protoc
-
-//Path to a library.
-Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=/usr/lib/libprotoc.so
-
-//Path to a library.
-Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/usr/lib/libprotoc.so
-
-//Path to a file.
-ZLIB_INCLUDE_DIR:PATH=/usr/include
+ZLIB_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
 ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/libz.so
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libz.so
 
 //The directory containing a CMake configuration file for absl.
 absl_DIR:PATH=/usr/lib/cmake/absl
 
-//The directory containing a CMake configuration file for c-ares.
-c-ares_DIR:PATH=/usr/lib/cmake/c-ares
-
 //The directory containing a CMake configuration file for gRPC.
-gRPC_DIR:PATH=/usr/lib/cmake/grpc
+gRPC_DIR:PATH=/usr/local/lib/cmake/grpc
 
 //Dependencies for the target
-memory_manager_LIB_DEPENDS:STATIC=general;proto_lib;general;gRPC::grpc++_unsecure;general;protobuf::libprotobuf;general;gRPC::grpc_unsecure;general;gRPC::gpr;
+memory_manager_LIB_DEPENDS:STATIC=general;proto_lib;general;gRPC::grpc++_unsecure;general;protobuf::libprotobuf;general;gRPC::grpc_unsecure;general;gRPC::gpr;general;proto_lib;general;gRPC::grpc++_unsecure;general;protobuf::libprotobuf;general;gRPC::grpc_unsecure;general;gRPC::gpr;
 
 //Dependencies for the target
-mpointers_LIB_DEPENDS:STATIC=general;proto_lib;general;gRPC::grpc++_unsecure;general;protobuf::libprotobuf;general;gRPC::grpc_unsecure;general;gRPC::gpr;
+mpointers_LIB_DEPENDS:STATIC=general;proto_lib;general;gRPC::grpc++_unsecure;general;protobuf::libprotobuf;general;gRPC::grpc_unsecure;general;gRPC::gpr;general;proto_lib;general;gRPC::grpc++_unsecure;general;protobuf::libprotobuf;general;gRPC::grpc_unsecure;general;gRPC::gpr;
 
 //Path to a library.
 pkgcfg_lib_ABSL_absl_bad_optional_access:FILEPATH=/usr/lib/libabsl_bad_optional_access.so
@@ -296,6 +260,9 @@ pkgcfg_lib_ABSL_absl_bad_variant_access:FILEPATH=/usr/lib/libabsl_bad_variant_ac
 
 //Path to a library.
 pkgcfg_lib_ABSL_absl_base:FILEPATH=/usr/lib/libabsl_base.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_city:FILEPATH=/usr/lib/libabsl_city.so
 
 //Path to a library.
 pkgcfg_lib_ABSL_absl_civil_time:FILEPATH=/usr/lib/libabsl_civil_time.so
@@ -334,10 +301,16 @@ pkgcfg_lib_ABSL_absl_debugging_internal:FILEPATH=/usr/lib/libabsl_debugging_inte
 pkgcfg_lib_ABSL_absl_demangle_internal:FILEPATH=/usr/lib/libabsl_demangle_internal.so
 
 //Path to a library.
+pkgcfg_lib_ABSL_absl_examine_stack:FILEPATH=/usr/lib/libabsl_examine_stack.so
+
+//Path to a library.
 pkgcfg_lib_ABSL_absl_exponential_biased:FILEPATH=/usr/lib/libabsl_exponential_biased.so
 
 //Path to a library.
 pkgcfg_lib_ABSL_absl_graphcycles_internal:FILEPATH=/usr/lib/libabsl_graphcycles_internal.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_hash:FILEPATH=/usr/lib/libabsl_hash.so
 
 //Path to a library.
 pkgcfg_lib_ABSL_absl_int128:FILEPATH=/usr/lib/libabsl_int128.so
@@ -346,7 +319,43 @@ pkgcfg_lib_ABSL_absl_int128:FILEPATH=/usr/lib/libabsl_int128.so
 pkgcfg_lib_ABSL_absl_kernel_timeout_internal:FILEPATH=/usr/lib/libabsl_kernel_timeout_internal.so
 
 //Path to a library.
+pkgcfg_lib_ABSL_absl_log_entry:FILEPATH=/usr/lib/libabsl_log_entry.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_globals:FILEPATH=/usr/lib/libabsl_log_globals.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_check_op:FILEPATH=/usr/lib/libabsl_log_internal_check_op.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_conditions:FILEPATH=/usr/lib/libabsl_log_internal_conditions.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_format:FILEPATH=/usr/lib/libabsl_log_internal_format.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_globals:FILEPATH=/usr/lib/libabsl_log_internal_globals.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_log_sink_set:FILEPATH=/usr/lib/libabsl_log_internal_log_sink_set.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_message:FILEPATH=/usr/lib/libabsl_log_internal_message.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_nullguard:FILEPATH=/usr/lib/libabsl_log_internal_nullguard.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_internal_proto:FILEPATH=/usr/lib/libabsl_log_internal_proto.so
+
+//Path to a library.
 pkgcfg_lib_ABSL_absl_log_severity:FILEPATH=/usr/lib/libabsl_log_severity.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_log_sink:FILEPATH=/usr/lib/libabsl_log_sink.so
+
+//Path to a library.
+pkgcfg_lib_ABSL_absl_low_level_hash:FILEPATH=/usr/lib/libabsl_low_level_hash.so
 
 //Path to a library.
 pkgcfg_lib_ABSL_absl_malloc_internal:FILEPATH=/usr/lib/libabsl_malloc_internal.so
@@ -546,12 +555,6 @@ pkgcfg_lib_RE2_re2:FILEPATH=/usr/lib/libre2.so
 //Path to a library.
 pkgcfg_lib_RE2_rt:FILEPATH=/usr/lib/librt.a
 
-//Path to a library.
-pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/libcrypto.so
-
-//Path to a library.
-pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib/libssl.so
-
 //Dependencies for the target
 proto_lib_LIB_DEPENDS:STATIC=general;protobuf::libprotobuf;general;gRPC::grpc++;
 
@@ -560,9 +563,6 @@ protobuf_MODULE_COMPATIBLE:BOOL=OFF
 
 //Enable for verbose output
 protobuf_VERBOSE:BOOL=OFF
-
-//The directory containing a CMake configuration file for re2.
-re2_DIR:PATH=re2_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for utf8_range.
 utf8_range_DIR:PATH=/usr/lib/cmake/utf8_range
@@ -578,10 +578,10 @@ ABSL_CFLAGS_OTHER:INTERNAL=-DNOMINMAX
 ABSL_FOUND:INTERNAL=1
 ABSL_INCLUDEDIR:INTERNAL=
 ABSL_INCLUDE_DIRS:INTERNAL=/usr/include
-ABSL_LDFLAGS:INTERNAL=-L/usr/lib;-labsl_statusor;-labsl_status;-labsl_cord;-labsl_cordz_info;-labsl_cord_internal;-labsl_cordz_functions;-labsl_exponential_biased;-labsl_cordz_handle;-labsl_synchronization;-labsl_graphcycles_internal;-labsl_kernel_timeout_internal;-labsl_time;-labsl_civil_time;-labsl_time_zone;-labsl_crc_cord_state;-labsl_crc32c;-labsl_crc_internal;-labsl_crc_cpu_detect;-labsl_bad_optional_access;-labsl_stacktrace;-labsl_str_format_internal;-labsl_strerror;-labsl_symbolize;-labsl_debugging_internal;-labsl_demangle_internal;-labsl_malloc_internal;-labsl_strings;-labsl_string_view;-labsl_strings_internal;-labsl_base;-lrt;-labsl_spinlock_wait;-labsl_int128;-labsl_throw_delegate;-labsl_bad_variant_access;-labsl_raw_logging_internal;-labsl_log_severity
+ABSL_LDFLAGS:INTERNAL=-L/usr/lib;-labsl_statusor;-labsl_status;-labsl_cord;-labsl_cordz_info;-labsl_cord_internal;-labsl_cordz_functions;-labsl_exponential_biased;-labsl_cordz_handle;-labsl_crc_cord_state;-labsl_crc32c;-labsl_crc_internal;-labsl_crc_cpu_detect;-labsl_log_internal_check_op;-labsl_log_internal_message;-labsl_examine_stack;-labsl_strerror;-labsl_log_internal_conditions;-labsl_log_internal_format;-labsl_str_format_internal;-labsl_log_internal_log_sink_set;-labsl_log_internal_globals;-labsl_log_globals;-labsl_hash;-labsl_city;-labsl_bad_optional_access;-labsl_bad_variant_access;-labsl_low_level_hash;-labsl_log_sink;-labsl_log_entry;-labsl_synchronization;-labsl_graphcycles_internal;-labsl_kernel_timeout_internal;-labsl_stacktrace;-labsl_symbolize;-labsl_debugging_internal;-labsl_demangle_internal;-labsl_malloc_internal;-labsl_time;-labsl_civil_time;-labsl_time_zone;-labsl_log_internal_nullguard;-labsl_log_internal_proto;-labsl_strings;-labsl_string_view;-labsl_strings_internal;-labsl_base;-lrt;-labsl_spinlock_wait;-labsl_int128;-labsl_throw_delegate;-labsl_raw_logging_internal;-labsl_log_severity
 ABSL_LDFLAGS_OTHER:INTERNAL=
 ABSL_LIBDIR:INTERNAL=
-ABSL_LIBRARIES:INTERNAL=absl_statusor;absl_status;absl_cord;absl_cordz_info;absl_cord_internal;absl_cordz_functions;absl_exponential_biased;absl_cordz_handle;absl_synchronization;absl_graphcycles_internal;absl_kernel_timeout_internal;absl_time;absl_civil_time;absl_time_zone;absl_crc_cord_state;absl_crc32c;absl_crc_internal;absl_crc_cpu_detect;absl_bad_optional_access;absl_stacktrace;absl_str_format_internal;absl_strerror;absl_symbolize;absl_debugging_internal;absl_demangle_internal;absl_malloc_internal;absl_strings;absl_string_view;absl_strings_internal;absl_base;rt;absl_spinlock_wait;absl_int128;absl_throw_delegate;absl_bad_variant_access;absl_raw_logging_internal;absl_log_severity
+ABSL_LIBRARIES:INTERNAL=absl_statusor;absl_status;absl_cord;absl_cordz_info;absl_cord_internal;absl_cordz_functions;absl_exponential_biased;absl_cordz_handle;absl_crc_cord_state;absl_crc32c;absl_crc_internal;absl_crc_cpu_detect;absl_log_internal_check_op;absl_log_internal_message;absl_examine_stack;absl_strerror;absl_log_internal_conditions;absl_log_internal_format;absl_str_format_internal;absl_log_internal_log_sink_set;absl_log_internal_globals;absl_log_globals;absl_hash;absl_city;absl_bad_optional_access;absl_bad_variant_access;absl_low_level_hash;absl_log_sink;absl_log_entry;absl_synchronization;absl_graphcycles_internal;absl_kernel_timeout_internal;absl_stacktrace;absl_symbolize;absl_debugging_internal;absl_demangle_internal;absl_malloc_internal;absl_time;absl_civil_time;absl_time_zone;absl_log_internal_nullguard;absl_log_internal_proto;absl_strings;absl_string_view;absl_strings_internal;absl_base;rt;absl_spinlock_wait;absl_int128;absl_throw_delegate;absl_raw_logging_internal;absl_log_severity
 ABSL_LIBRARY_DIRS:INTERNAL=/usr/lib
 ABSL_LIBS:INTERNAL=
 ABSL_LIBS_L:INTERNAL=
@@ -593,10 +593,10 @@ ABSL_STATIC_CFLAGS:INTERNAL=-I/usr/include;-DNOMINMAX
 ABSL_STATIC_CFLAGS_I:INTERNAL=
 ABSL_STATIC_CFLAGS_OTHER:INTERNAL=-DNOMINMAX
 ABSL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
-ABSL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-labsl_statusor;-labsl_status;-labsl_cord;-labsl_cordz_info;-labsl_cord_internal;-labsl_cordz_functions;-labsl_exponential_biased;-labsl_cordz_handle;-labsl_synchronization;-labsl_graphcycles_internal;-labsl_kernel_timeout_internal;-labsl_time;-labsl_civil_time;-labsl_time_zone;-labsl_crc_cord_state;-labsl_crc32c;-labsl_crc_internal;-labsl_crc_cpu_detect;-labsl_bad_optional_access;-labsl_stacktrace;-labsl_str_format_internal;-labsl_strerror;-labsl_symbolize;-labsl_debugging_internal;-labsl_demangle_internal;-labsl_malloc_internal;-labsl_strings;-labsl_string_view;-labsl_strings_internal;-labsl_base;-lrt;-labsl_spinlock_wait;-labsl_int128;-labsl_throw_delegate;-labsl_bad_variant_access;-labsl_raw_logging_internal;-labsl_log_severity
+ABSL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-labsl_statusor;-labsl_status;-labsl_cord;-labsl_cordz_info;-labsl_cord_internal;-labsl_cordz_functions;-labsl_exponential_biased;-labsl_cordz_handle;-labsl_crc_cord_state;-labsl_crc32c;-labsl_crc_internal;-labsl_crc_cpu_detect;-labsl_log_internal_check_op;-labsl_log_internal_message;-labsl_examine_stack;-labsl_strerror;-labsl_log_internal_conditions;-labsl_log_internal_format;-labsl_str_format_internal;-labsl_log_internal_log_sink_set;-labsl_log_internal_globals;-labsl_log_globals;-labsl_hash;-labsl_city;-labsl_bad_optional_access;-labsl_bad_variant_access;-labsl_low_level_hash;-labsl_log_sink;-labsl_log_entry;-labsl_synchronization;-labsl_graphcycles_internal;-labsl_kernel_timeout_internal;-labsl_stacktrace;-labsl_symbolize;-labsl_debugging_internal;-labsl_demangle_internal;-labsl_malloc_internal;-labsl_time;-labsl_civil_time;-labsl_time_zone;-labsl_log_internal_nullguard;-labsl_log_internal_proto;-labsl_strings;-labsl_string_view;-labsl_strings_internal;-labsl_base;-lrt;-labsl_spinlock_wait;-labsl_int128;-labsl_throw_delegate;-labsl_raw_logging_internal;-labsl_log_severity
 ABSL_STATIC_LDFLAGS_OTHER:INTERNAL=
 ABSL_STATIC_LIBDIR:INTERNAL=
-ABSL_STATIC_LIBRARIES:INTERNAL=absl_statusor;absl_status;absl_cord;absl_cordz_info;absl_cord_internal;absl_cordz_functions;absl_exponential_biased;absl_cordz_handle;absl_synchronization;absl_graphcycles_internal;absl_kernel_timeout_internal;absl_time;absl_civil_time;absl_time_zone;absl_crc_cord_state;absl_crc32c;absl_crc_internal;absl_crc_cpu_detect;absl_bad_optional_access;absl_stacktrace;absl_str_format_internal;absl_strerror;absl_symbolize;absl_debugging_internal;absl_demangle_internal;absl_malloc_internal;absl_strings;absl_string_view;absl_strings_internal;absl_base;rt;absl_spinlock_wait;absl_int128;absl_throw_delegate;absl_bad_variant_access;absl_raw_logging_internal;absl_log_severity
+ABSL_STATIC_LIBRARIES:INTERNAL=absl_statusor;absl_status;absl_cord;absl_cordz_info;absl_cord_internal;absl_cordz_functions;absl_exponential_biased;absl_cordz_handle;absl_crc_cord_state;absl_crc32c;absl_crc_internal;absl_crc_cpu_detect;absl_log_internal_check_op;absl_log_internal_message;absl_examine_stack;absl_strerror;absl_log_internal_conditions;absl_log_internal_format;absl_str_format_internal;absl_log_internal_log_sink_set;absl_log_internal_globals;absl_log_globals;absl_hash;absl_city;absl_bad_optional_access;absl_bad_variant_access;absl_low_level_hash;absl_log_sink;absl_log_entry;absl_synchronization;absl_graphcycles_internal;absl_kernel_timeout_internal;absl_stacktrace;absl_symbolize;absl_debugging_internal;absl_demangle_internal;absl_malloc_internal;absl_time;absl_civil_time;absl_time_zone;absl_log_internal_nullguard;absl_log_internal_proto;absl_strings;absl_string_view;absl_strings_internal;absl_base;rt;absl_spinlock_wait;absl_int128;absl_throw_delegate;absl_raw_logging_internal;absl_log_severity
 ABSL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
 ABSL_STATIC_LIBS:INTERNAL=
 ABSL_STATIC_LIBS_L:INTERNAL=
@@ -608,6 +608,46 @@ ABSL_absl_base_LIBDIR:INTERNAL=/usr/lib
 ABSL_absl_base_MODULE_NAME:INTERNAL=absl_base
 ABSL_absl_base_PREFIX:INTERNAL=/usr
 ABSL_absl_base_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_check_op_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_check_op_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_check_op_MODULE_NAME:INTERNAL=absl_log_internal_check_op
+ABSL_absl_log_internal_check_op_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_check_op_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_conditions_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_conditions_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_conditions_MODULE_NAME:INTERNAL=absl_log_internal_conditions
+ABSL_absl_log_internal_conditions_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_conditions_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_format_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_format_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_format_MODULE_NAME:INTERNAL=absl_log_internal_format
+ABSL_absl_log_internal_format_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_format_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_globals_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_globals_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_globals_MODULE_NAME:INTERNAL=absl_log_internal_globals
+ABSL_absl_log_internal_globals_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_globals_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_log_sink_set_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_log_sink_set_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_log_sink_set_MODULE_NAME:INTERNAL=absl_log_internal_log_sink_set
+ABSL_absl_log_internal_log_sink_set_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_log_sink_set_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_message_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_message_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_message_MODULE_NAME:INTERNAL=absl_log_internal_message
+ABSL_absl_log_internal_message_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_message_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_nullguard_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_nullguard_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_nullguard_MODULE_NAME:INTERNAL=absl_log_internal_nullguard
+ABSL_absl_log_internal_nullguard_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_nullguard_VERSION:INTERNAL=20230802
+ABSL_absl_log_internal_proto_INCLUDEDIR:INTERNAL=/usr/include
+ABSL_absl_log_internal_proto_LIBDIR:INTERNAL=/usr/lib
+ABSL_absl_log_internal_proto_MODULE_NAME:INTERNAL=absl_log_internal_proto
+ABSL_absl_log_internal_proto_PREFIX:INTERNAL=/usr
+ABSL_absl_log_internal_proto_VERSION:INTERNAL=20230802
 ABSL_absl_status_INCLUDEDIR:INTERNAL=/usr/include
 ABSL_absl_status_LIBDIR:INTERNAL=/usr/lib
 ABSL_absl_status_MODULE_NAME:INTERNAL=absl_status
@@ -761,44 +801,16 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding OpenSSL
-FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/libcrypto.so][/usr/include][c ][v3.4.1()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v2.4.3()]
-//Details about finding Protobuf
-FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/libprotobuf.so][/usr/include][v4.25.0(3.20.0)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding ZLIB
-FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/libz.so][/usr/include][c ][v1.3.1()]
-//Details about finding c-ares
-FIND_PACKAGE_MESSAGE_DETAILS_c-ares:INTERNAL=[/usr/lib/cmake/c-ares/c-ares-config.cmake][v1.34.4()]
-//ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY
-OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENSSL_INCLUDE_DIR
-OPENSSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENSSL_SSL_LIBRARY
-OPENSSL_SSL_LIBRARY-ADVANCED:INTERNAL=1
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/local/lib/libz.so][/usr/local/include][c ][v1.2.13()]
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_INCLUDE_DIR
-Protobuf_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LIBRARY_DEBUG
-Protobuf_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LIBRARY_RELEASE
-Protobuf_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LITE_LIBRARY_DEBUG
-Protobuf_LITE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LITE_LIBRARY_RELEASE
-Protobuf_LITE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_PROTOC_EXECUTABLE
-Protobuf_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_DEBUG
-Protobuf_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_RELEASE
-Protobuf_PROTOC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 RE2_CFLAGS:INTERNAL=-pthread;-I/usr/include;-DNOMINMAX
 RE2_CFLAGS_I:INTERNAL=
 RE2_CFLAGS_OTHER:INTERNAL=-pthread;-DNOMINMAX
@@ -844,53 +856,18 @@ ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 _CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
-_OPENSSL_CFLAGS:INTERNAL=-I/usr/include
-_OPENSSL_CFLAGS_I:INTERNAL=
-_OPENSSL_CFLAGS_OTHER:INTERNAL=
-_OPENSSL_FOUND:INTERNAL=1
-_OPENSSL_INCLUDEDIR:INTERNAL=/usr/include
-_OPENSSL_INCLUDE_DIRS:INTERNAL=/usr/include
-_OPENSSL_LDFLAGS:INTERNAL=-L/usr/lib;-lssl;-lcrypto
-_OPENSSL_LDFLAGS_OTHER:INTERNAL=
-_OPENSSL_LIBDIR:INTERNAL=/usr/lib
-_OPENSSL_LIBRARIES:INTERNAL=ssl;crypto
-_OPENSSL_LIBRARY_DIRS:INTERNAL=/usr/lib
-_OPENSSL_LIBS:INTERNAL=
-_OPENSSL_LIBS_L:INTERNAL=
-_OPENSSL_LIBS_OTHER:INTERNAL=
-_OPENSSL_LIBS_PATHS:INTERNAL=
-_OPENSSL_MODULE_NAME:INTERNAL=openssl
-_OPENSSL_PREFIX:INTERNAL=/usr
-_OPENSSL_STATIC_CFLAGS:INTERNAL=-I/usr/include
-_OPENSSL_STATIC_CFLAGS_I:INTERNAL=
-_OPENSSL_STATIC_CFLAGS_OTHER:INTERNAL=
-_OPENSSL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
-_OPENSSL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lssl;-lcrypto;-ldl;-pthread
-_OPENSSL_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
-_OPENSSL_STATIC_LIBDIR:INTERNAL=
-_OPENSSL_STATIC_LIBRARIES:INTERNAL=ssl;crypto;dl
-_OPENSSL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
-_OPENSSL_STATIC_LIBS:INTERNAL=
-_OPENSSL_STATIC_LIBS_L:INTERNAL=
-_OPENSSL_STATIC_LIBS_OTHER:INTERNAL=
-_OPENSSL_STATIC_LIBS_PATHS:INTERNAL=
-_OPENSSL_VERSION:INTERNAL=3.4.1
-_OPENSSL_openssl_INCLUDEDIR:INTERNAL=
-_OPENSSL_openssl_LIBDIR:INTERNAL=
-_OPENSSL_openssl_PREFIX:INTERNAL=
-_OPENSSL_openssl_VERSION:INTERNAL=
-__pkg_config_arguments_ABSL:INTERNAL=REQUIRED;IMPORTED_TARGET;absl_base=20230802;absl_synchronization=20230802;absl_strings=20230802;absl_status=20230802;absl_statusor=20230802
+__pkg_config_arguments_ABSL:INTERNAL=REQUIRED;IMPORTED_TARGET;absl_base=20230802;absl_synchronization=20230802;absl_strings=20230802;absl_status=20230802;absl_statusor=20230802;absl_log_internal_message=20230802;absl_log_internal_check_op=20230802;absl_log_internal_conditions=20230802;absl_log_internal_format=20230802;absl_log_internal_globals=20230802;absl_log_internal_log_sink_set=20230802;absl_log_internal_nullguard=20230802;absl_log_internal_proto=20230802
 __pkg_config_arguments_RE2:INTERNAL=REQUIRED;IMPORTED_TARGET;re2=11.0.0
-__pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
 __pkg_config_checked_ABSL:INTERNAL=1
 __pkg_config_checked_RE2:INTERNAL=1
-__pkg_config_checked__OPENSSL:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_bad_optional_access
 pkgcfg_lib_ABSL_absl_bad_optional_access-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_bad_variant_access
 pkgcfg_lib_ABSL_absl_bad_variant_access-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_base
 pkgcfg_lib_ABSL_absl_base-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_city
+pkgcfg_lib_ABSL_absl_city-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_civil_time
 pkgcfg_lib_ABSL_absl_civil_time-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_cord
@@ -915,16 +892,44 @@ pkgcfg_lib_ABSL_absl_crc_internal-ADVANCED:INTERNAL=1
 pkgcfg_lib_ABSL_absl_debugging_internal-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_demangle_internal
 pkgcfg_lib_ABSL_absl_demangle_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_examine_stack
+pkgcfg_lib_ABSL_absl_examine_stack-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_exponential_biased
 pkgcfg_lib_ABSL_absl_exponential_biased-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_graphcycles_internal
 pkgcfg_lib_ABSL_absl_graphcycles_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_hash
+pkgcfg_lib_ABSL_absl_hash-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_int128
 pkgcfg_lib_ABSL_absl_int128-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_kernel_timeout_internal
 pkgcfg_lib_ABSL_absl_kernel_timeout_internal-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_entry
+pkgcfg_lib_ABSL_absl_log_entry-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_globals
+pkgcfg_lib_ABSL_absl_log_globals-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_check_op
+pkgcfg_lib_ABSL_absl_log_internal_check_op-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_conditions
+pkgcfg_lib_ABSL_absl_log_internal_conditions-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_format
+pkgcfg_lib_ABSL_absl_log_internal_format-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_globals
+pkgcfg_lib_ABSL_absl_log_internal_globals-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_log_sink_set
+pkgcfg_lib_ABSL_absl_log_internal_log_sink_set-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_message
+pkgcfg_lib_ABSL_absl_log_internal_message-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_nullguard
+pkgcfg_lib_ABSL_absl_log_internal_nullguard-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_internal_proto
+pkgcfg_lib_ABSL_absl_log_internal_proto-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_severity
 pkgcfg_lib_ABSL_absl_log_severity-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_log_sink
+pkgcfg_lib_ABSL_absl_log_sink-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_ABSL_absl_low_level_hash
+pkgcfg_lib_ABSL_absl_low_level_hash-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_malloc_internal
 pkgcfg_lib_ABSL_absl_malloc_internal-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ABSL_absl_raw_logging_internal
@@ -1057,10 +1062,6 @@ pkgcfg_lib_RE2_absl_time_zone-ADVANCED:INTERNAL=1
 pkgcfg_lib_RE2_re2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_RE2_rt
 pkgcfg_lib_RE2_rt-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib__OPENSSL_crypto
-pkgcfg_lib__OPENSSL_crypto-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib__OPENSSL_ssl
-pkgcfg_lib__OPENSSL_ssl-ADVANCED:INTERNAL=1
 prefix_result:INTERNAL=/usr/lib
 //ADVANCED property for variable: protobuf_MODULE_COMPATIBLE
 protobuf_MODULE_COMPATIBLE-ADVANCED:INTERNAL=1

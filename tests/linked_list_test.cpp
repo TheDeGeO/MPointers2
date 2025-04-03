@@ -1,12 +1,7 @@
 #include <iostream>
 #include <string>
 #include "../src/mpointers/mpointer.h"
-
-// Node structure for the linked list
-struct Node {
-    int data;
-    MPointer<Node> next;
-};
+#include "../src/mpointers/node.h"
 
 int main() {
     try {

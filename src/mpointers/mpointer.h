@@ -33,6 +33,8 @@ public:
     // Static factory method
     static MPointer<T> New();
 
+    uint64_t id() const { return id_; }
+
 private:
     uint64_t id_;
     static std::unique_ptr<memory_service::MemoryManager::Stub> stub_;

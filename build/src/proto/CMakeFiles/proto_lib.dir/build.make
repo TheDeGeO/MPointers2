@@ -71,7 +71,7 @@ include src/proto/CMakeFiles/proto_lib.dir/flags.make
 
 src/proto/memory_service.pb.cc: /home/thedegeo/Documents/T/MPointers2/src/proto/memory_service.proto
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating memory_service.pb.cc, memory_service.pb.h, memory_service.grpc.pb.cc, memory_service.grpc.pb.h"
-	cd /home/thedegeo/Documents/T/MPointers2/build/src/proto && /usr/bin/protoc --proto_path=/home/thedegeo/Documents/T/MPointers2/src/proto --cpp_out=/home/thedegeo/Documents/T/MPointers2/build/src/proto --grpc_out=/home/thedegeo/Documents/T/MPointers2/build/src/proto --plugin=protoc-gen-grpc=/usr/bin/grpc_cpp_plugin /home/thedegeo/Documents/T/MPointers2/src/proto/memory_service.proto
+	cd /home/thedegeo/Documents/T/MPointers2/build/src/proto && /usr/local/bin/protoc --proto_path=/home/thedegeo/Documents/T/MPointers2/src/proto --cpp_out=/home/thedegeo/Documents/T/MPointers2/build/src/proto --grpc_out=/home/thedegeo/Documents/T/MPointers2/build/src/proto --plugin=protoc-gen-grpc=/usr/local/bin/grpc_cpp_plugin /home/thedegeo/Documents/T/MPointers2/src/proto/memory_service.proto
 
 src/proto/memory_service.pb.h: src/proto/memory_service.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate src/proto/memory_service.pb.h

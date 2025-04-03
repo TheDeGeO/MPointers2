@@ -1,2 +1,2 @@
 # Hashes of file build rules.
-6e9ff0fe928e9035d35688d5b323dc65 src/proto/memory_service.pb.cc
+8ac2fa8cfcd985177d5e0e9649250bfe src/proto/memory_service.pb.cc

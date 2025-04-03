@@ -1,4 +1,5 @@
 #include "mpointer.h"
+#include "node.h"
 #include <grpcpp/grpcpp.h>
 #include "memory_service.grpc.pb.h"
 #include <cstring>
@@ -184,4 +185,5 @@ template class MPointer<int>;
 template class MPointer<float>;
 template class MPointer<double>;
 template class MPointer<char>;
-template class MPointer<bool>; 
+template class MPointer<bool>;
+template class MPointer<Node>; 
