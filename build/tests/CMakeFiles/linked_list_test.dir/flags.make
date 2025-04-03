@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/thedegeo/Documents/T/MPointers2/build/src/proto
 
-CXX_FLAGS = -std=gnu++17 -pthread
+CXX_FLAGS = -std=gnu++17 -pthread -DNOMINMAX
 

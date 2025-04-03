@@ -8,16 +8,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find required packages
-find_package(Protobuf 3.21 REQUIRED)
-find_package(gRPC 1.50.0 CONFIG REQUIRED)
+find_package(Protobuf 3.20.0 REQUIRED)
+find_package(gRPC 1.60.0 CONFIG REQUIRED)
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 
-# Configure Abseil with version compatible with gRPC 1.50.0
-pkg_check_modules(ABSL REQUIRED IMPORTED_TARGET absl_base=20220623 absl_synchronization=20220623 absl_strings=20220623 absl_status=20220623 absl_statusor=20220623)
+# Configure Abseil with version compatible with gRPC 1.60.0
+pkg_check_modules(ABSL REQUIRED IMPORTED_TARGET absl_base=20230802 absl_synchronization=20230802 absl_strings=20230802 absl_status=20230802 absl_statusor=20230802)
 
-# Configure RE2 with version compatible with gRPC 1.50.0
-pkg_check_modules(RE2 REQUIRED IMPORTED_TARGET re2=10.0.0)
+# Configure RE2 with version compatible with gRPC 1.60.0
+pkg_check_modules(RE2 REQUIRED IMPORTED_TARGET re2=11.0.0)
 
 # Add subdirectories
 add_subdirectory(src)
