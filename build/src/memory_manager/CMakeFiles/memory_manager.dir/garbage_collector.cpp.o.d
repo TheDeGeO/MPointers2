@@ -438,8 +438,8 @@ src/memory_manager/CMakeFiles/memory_manager.dir/garbage_collector.cpp.o: \
  /usr/local/include/grpcpp/security/authorization_policy_provider.h \
  /usr/local/include/grpcpp/server_posix.h \
  /usr/local/include/grpcpp/version_info.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/../proto/memory_service.grpc.pb.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/../proto/memory_service.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.grpc.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.pb.h \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \
  /usr/local/include/google/protobuf/io/coded_stream.h \

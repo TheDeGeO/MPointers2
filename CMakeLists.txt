@@ -37,6 +37,12 @@ pkg_check_modules(ABSL REQUIRED IMPORTED_TARGET
 # Configure RE2 with version compatible with gRPC 1.60.0
 pkg_check_modules(RE2 REQUIRED IMPORTED_TARGET re2=11.0.0)
 
+# Add include directories for the entire project
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_BINARY_DIR}/src/proto
+)
+
 # Add subdirectories
 add_subdirectory(src)
 add_subdirectory(tests)

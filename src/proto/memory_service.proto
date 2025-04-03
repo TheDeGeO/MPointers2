@@ -27,6 +27,7 @@ enum DataType {
   DOUBLE = 2;
   CHAR = 3;
   BOOL = 4;
+  CUSTOM = 5;
 }
 
 // Create request message

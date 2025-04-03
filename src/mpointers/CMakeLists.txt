@@ -8,7 +8,7 @@ add_library(mpointers
 target_include_directories(mpointers
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}/../proto
+    ${CMAKE_BINARY_DIR}/src/proto
 )
 
 target_link_libraries(mpointers

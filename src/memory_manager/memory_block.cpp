@@ -1,5 +1,6 @@
 #include "memory_block.h"
 #include <cstring>
+#include <algorithm>
 
 MemoryBlock::MemoryBlock(void* start, size_t size, uint64_t id)
     : start_(start)
@@ -32,7 +33,9 @@ bool MemoryBlock::write(const void* data, size_t size) {
     }
     
     std::lock_guard<std::mutex> lock(mutex_);
-    std::memcpy(start_, data, size);
+    std::copy(static_cast<const char*>(data),
+              static_cast<const char*>(data) + size,
+              static_cast<char*>(start_));
     return true;
 }
 
@@ -42,6 +45,8 @@ bool MemoryBlock::read(void* data, size_t size) const {
     }
     
     std::lock_guard<std::mutex> lock(mutex_);
-    std::memcpy(data, start_, size);
+    std::copy(static_cast<const char*>(start_),
+              static_cast<const char*>(start_) + size,
+              static_cast<char*>(data));
     return true;
 } 

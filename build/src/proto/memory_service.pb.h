@@ -94,6 +94,7 @@ enum DataType : int {
   DOUBLE = 2,
   CHAR = 3,
   BOOL = 4,
+  CUSTOM = 5,
   DataType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       std::numeric_limits<::int32_t>::min(),
   DataType_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -103,8 +104,8 @@ enum DataType : int {
 bool DataType_IsValid(int value);
 extern const uint32_t DataType_internal_data_[];
 constexpr DataType DataType_MIN = static_cast<DataType>(0);
-constexpr DataType DataType_MAX = static_cast<DataType>(4);
-constexpr int DataType_ARRAYSIZE = 4 + 1;
+constexpr DataType DataType_MAX = static_cast<DataType>(5);
+constexpr int DataType_ARRAYSIZE = 5 + 1;
 const ::google::protobuf::EnumDescriptor*
 DataType_descriptor();
 template <typename T>
@@ -117,7 +118,7 @@ const std::string& DataType_Name(T value) {
 template <>
 inline const std::string& DataType_Name(DataType value) {
   return ::google::protobuf::internal::NameOfDenseEnum<DataType_descriptor,
-                                                 0, 4>(
+                                                 0, 5>(
       static_cast<int>(value));
 }
 inline bool DataType_Parse(absl::string_view name, DataType* value) {

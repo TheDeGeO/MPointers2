@@ -435,8 +435,8 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: \
  /usr/local/include/grpcpp/security/authorization_policy_provider.h \
  /usr/local/include/grpcpp/server_posix.h \
  /usr/local/include/grpcpp/version_info.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/../proto/memory_service.grpc.pb.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/../proto/memory_service.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.grpc.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.pb.h \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \
  /usr/local/include/google/protobuf/io/coded_stream.h \
@@ -558,8 +558,8 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: \
  /home/thedegeo/Documents/T/MPointers2/src/memory_manager/garbage_collector.h \
  /usr/include/c++/14.2.1/thread /usr/include/c++/14.2.1/bits/std_thread.h \
  /usr/include/c++/14.2.1/bits/this_thread_sleep.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/../proto/../proto/memory_service.grpc.pb.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/../proto/../proto/memory_service.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/../proto/memory_service.grpc.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/../proto/memory_service.pb.h \
  /usr/include/c++/14.2.1/fstream \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \

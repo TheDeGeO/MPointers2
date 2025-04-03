@@ -435,8 +435,7 @@ src/mpointers/CMakeFiles/mpointers.dir/mpointer.cpp.o: \
  /usr/local/include/grpcpp/security/authorization_policy_provider.h \
  /usr/local/include/grpcpp/server_posix.h \
  /usr/local/include/grpcpp/version_info.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/mpointers/../proto/memory_service.grpc.pb.h \
- /home/thedegeo/Documents/T/MPointers2/build/src/mpointers/../proto/memory_service.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.pb.h \
  /usr/local/include/google/protobuf/port_def.inc \
  /usr/local/include/google/protobuf/port_undef.inc \
  /usr/local/include/google/protobuf/io/coded_stream.h \
@@ -531,6 +530,8 @@ src/mpointers/CMakeFiles/mpointers.dir/mpointer.cpp.o: \
  /usr/local/include/google/protobuf/map.h \
  /usr/local/include/google/protobuf/map_type_handler.h \
  /usr/local/include/google/protobuf/reflection.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.grpc.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/build/src/proto/memory_service.pb.h \
  /usr/local/include/grpcpp/generic/async_generic_service.h \
  /usr/local/include/grpcpp/impl/server_callback_handlers.h \
  /usr/local/include/grpcpp/support/async_stream.h \

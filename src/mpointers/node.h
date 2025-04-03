@@ -1,6 +1,7 @@
 #pragma once
 
-#include "mpointer.h"
+template<typename T>
+class MPointer;
 
 struct Node {
     int data;

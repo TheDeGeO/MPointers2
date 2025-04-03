@@ -316,25 +316,25 @@ const char descriptor_table_protodef_memory_5fservice_2eproto[] PROTOBUF_SECTION
     "value\030\001 \001(\014\022\017\n\007success\030\002 \001(\010\022\025\n\rerror_me"
     "ssage\030\003 \001(\t\"\035\n\017RefCountRequest\022\n\n\002id\030\001 \001"
     "(\004\":\n\020RefCountResponse\022\017\n\007success\030\001 \001(\010\022"
-    "\025\n\rerror_message\030\002 \001(\t*>\n\010DataType\022\007\n\003IN"
+    "\025\n\rerror_message\030\002 \001(\t*J\n\010DataType\022\007\n\003IN"
     "T\020\000\022\t\n\005FLOAT\020\001\022\n\n\006DOUBLE\020\002\022\010\n\004CHAR\020\003\022\010\n\004"
-    "BOOL\020\0042\220\003\n\rMemoryManager\022I\n\006Create\022\035.mem"
-    "ory_service.CreateRequest\032\036.memory_servi"
-    "ce.CreateResponse\"\000\022@\n\003Set\022\032.memory_serv"
-    "ice.SetRequest\032\033.memory_service.SetRespo"
-    "nse\"\000\022@\n\003Get\022\032.memory_service.GetRequest"
-    "\032\033.memory_service.GetResponse\"\000\022W\n\020Incre"
-    "aseRefCount\022\037.memory_service.RefCountReq"
-    "uest\032 .memory_service.RefCountResponse\"\000"
-    "\022W\n\020DecreaseRefCount\022\037.memory_service.Re"
-    "fCountRequest\032 .memory_service.RefCountR"
-    "esponse\"\000b\006proto3"
+    "BOOL\020\004\022\n\n\006CUSTOM\020\0052\220\003\n\rMemoryManager\022I\n\006"
+    "Create\022\035.memory_service.CreateRequest\032\036."
+    "memory_service.CreateResponse\"\000\022@\n\003Set\022\032"
+    ".memory_service.SetRequest\032\033.memory_serv"
+    "ice.SetResponse\"\000\022@\n\003Get\022\032.memory_servic"
+    "e.GetRequest\032\033.memory_service.GetRespons"
+    "e\"\000\022W\n\020IncreaseRefCount\022\037.memory_service"
+    ".RefCountRequest\032 .memory_service.RefCou"
+    "ntResponse\"\000\022W\n\020DecreaseRefCount\022\037.memor"
+    "y_service.RefCountRequest\032 .memory_servi"
+    "ce.RefCountResponse\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_memory_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_memory_5fservice_2eproto = {
     false,
     false,
-    937,
+    949,
     descriptor_table_protodef_memory_5fservice_2eproto,
     "memory_service.proto",
     &descriptor_table_memory_5fservice_2eproto_once,
@@ -372,9 +372,9 @@ const ::google::protobuf::EnumDescriptor* DataType_descriptor() {
   return file_level_enum_descriptors_memory_5fservice_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t DataType_internal_data_[] = {
-    327680u, 0u, };
+    393216u, 0u, };
 bool DataType_IsValid(int value) {
-  return 0 <= value && value <= 4;
+  return 0 <= value && value <= 5;
 }
 // ===================================================================
 
