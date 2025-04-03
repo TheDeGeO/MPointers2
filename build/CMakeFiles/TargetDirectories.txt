@@ -1,0 +1,17 @@
+/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles/edit_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles/rebuild_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/CMakeFiles/mem-mgr.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/CMakeFiles/edit_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/CMakeFiles/rebuild_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/proto/CMakeFiles/proto_lib.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/proto/CMakeFiles/edit_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/proto/CMakeFiles/rebuild_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/CMakeFiles/memory_manager.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/CMakeFiles/edit_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/memory_manager/CMakeFiles/rebuild_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/mpointers/CMakeFiles/mpointers.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/mpointers/CMakeFiles/edit_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/src/mpointers/CMakeFiles/rebuild_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/linked_list_test.dir
+/home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/edit_cache.dir
+/home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/rebuild_cache.dir

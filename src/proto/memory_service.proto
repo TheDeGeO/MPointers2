@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package memory_service;
+
+// Memory Manager service definition
+service MemoryManager {
+  // Creates a new memory block
+  rpc Create(CreateRequest) returns (CreateResponse) {}
+  
+  // Sets a value in a memory block
+  rpc Set(SetRequest) returns (SetResponse) {}
+  
+  // Gets a value from a memory block
+  rpc Get(GetRequest) returns (GetResponse) {}
+  
+  // Increases reference count
+  rpc IncreaseRefCount(RefCountRequest) returns (RefCountResponse) {}
+  
+  // Decreases reference count
+  rpc DecreaseRefCount(RefCountRequest) returns (RefCountResponse) {}
+}
+
+// Data types supported by the memory manager
+enum DataType {
+  INT = 0;
+  FLOAT = 1;
+  DOUBLE = 2;
+  CHAR = 3;
+  BOOL = 4;
+}
+
+// Create request message
+message CreateRequest {
+  uint64 size = 1;
+  DataType type = 2;
+}
+
+// Create response message
+message CreateResponse {
+  uint64 id = 1;
+  bool success = 2;
+  string error_message = 3;
+}
+
+// Set request message
+message SetRequest {
+  uint64 id = 1;
+  bytes value = 2;
+}
+
+// Set response message
+message SetResponse {
+  bool success = 1;
+  string error_message = 2;
+}
+
+// Get request message
+message GetRequest {
+  uint64 id = 1;
+}
+
+// Get response message
+message GetResponse {
+  bytes value = 1;
+  bool success = 2;
+  string error_message = 3;
+}
+
+// Reference count request message
+message RefCountRequest {
+  uint64 id = 1;
+}
+
+// Reference count response message
+message RefCountResponse {
+  bool success = 1;
+  string error_message = 2;
+} 
