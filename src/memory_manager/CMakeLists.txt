@@ -24,4 +24,7 @@ target_link_libraries(memory_manager
     PkgConfig::ABSL
     PkgConfig::RE2
     Threads::Threads
-) 
+)
+
+# Add dependency on proto_lib to ensure files are generated first
+add_dependencies(memory_manager proto_lib) 

@@ -174,10 +174,14 @@ src/proto/clean: src/proto/CMakeFiles/proto_lib.dir/clean
 
 # Recursive "all" directory target.
 tests/all: tests/CMakeFiles/linked_list_test.dir/all
+tests/all: tests/CMakeFiles/simple_test.dir/all
+tests/all: tests/CMakeFiles/grpc_test.dir/all
 .PHONY : tests/all
 
 # Recursive "codegen" directory target.
 tests/codegen: tests/CMakeFiles/linked_list_test.dir/codegen
+tests/codegen: tests/CMakeFiles/simple_test.dir/codegen
+tests/codegen: tests/CMakeFiles/grpc_test.dir/codegen
 .PHONY : tests/codegen
 
 # Recursive "preinstall" directory target.
@@ -186,6 +190,8 @@ tests/preinstall:
 
 # Recursive "clean" directory target.
 tests/clean: tests/CMakeFiles/linked_list_test.dir/clean
+tests/clean: tests/CMakeFiles/simple_test.dir/clean
+tests/clean: tests/CMakeFiles/grpc_test.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -197,7 +203,7 @@ src/CMakeFiles/mem-mgr.dir/all: src/memory_manager/CMakeFiles/memory_manager.dir
 src/CMakeFiles/mem-mgr.dir/all: src/mpointers/CMakeFiles/mpointers.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mem-mgr.dir/build.make src/CMakeFiles/mem-mgr.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mem-mgr.dir/build.make src/CMakeFiles/mem-mgr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=3,4 "Built target mem-mgr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=5,6 "Built target mem-mgr"
 .PHONY : src/CMakeFiles/mem-mgr.dir/all
 
 # Build rule for subdir invocation for target.
@@ -214,7 +220,7 @@ mem-mgr: src/CMakeFiles/mem-mgr.dir/rule
 # codegen rule for target.
 src/CMakeFiles/mem-mgr.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mem-mgr.dir/build.make src/CMakeFiles/mem-mgr.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=3,4 "Finished codegen for target mem-mgr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=5,6 "Finished codegen for target mem-mgr"
 .PHONY : src/CMakeFiles/mem-mgr.dir/codegen
 
 # clean rule for target.
@@ -229,7 +235,7 @@ src/CMakeFiles/mem-mgr.dir/clean:
 src/proto/CMakeFiles/proto_lib.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/proto/CMakeFiles/proto_lib.dir/build.make src/proto/CMakeFiles/proto_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/proto/CMakeFiles/proto_lib.dir/build.make src/proto/CMakeFiles/proto_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=11,12,13,14 "Built target proto_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=13,14,15,16 "Built target proto_lib"
 .PHONY : src/proto/CMakeFiles/proto_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -246,7 +252,7 @@ proto_lib: src/proto/CMakeFiles/proto_lib.dir/rule
 # codegen rule for target.
 src/proto/CMakeFiles/proto_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/proto/CMakeFiles/proto_lib.dir/build.make src/proto/CMakeFiles/proto_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=11,12,13,14 "Finished codegen for target proto_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=13,14,15,16 "Finished codegen for target proto_lib"
 .PHONY : src/proto/CMakeFiles/proto_lib.dir/codegen
 
 # clean rule for target.
@@ -261,7 +267,7 @@ src/proto/CMakeFiles/proto_lib.dir/clean:
 src/memory_manager/CMakeFiles/memory_manager.dir/all: src/proto/CMakeFiles/proto_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f src/memory_manager/CMakeFiles/memory_manager.dir/build.make src/memory_manager/CMakeFiles/memory_manager.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/memory_manager/CMakeFiles/memory_manager.dir/build.make src/memory_manager/CMakeFiles/memory_manager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=5,6,7,8 "Built target memory_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=7,8,9,10 "Built target memory_manager"
 .PHONY : src/memory_manager/CMakeFiles/memory_manager.dir/all
 
 # Build rule for subdir invocation for target.
@@ -276,9 +282,9 @@ memory_manager: src/memory_manager/CMakeFiles/memory_manager.dir/rule
 .PHONY : memory_manager
 
 # codegen rule for target.
-src/memory_manager/CMakeFiles/memory_manager.dir/codegen:
+src/memory_manager/CMakeFiles/memory_manager.dir/codegen: src/proto/CMakeFiles/proto_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f src/memory_manager/CMakeFiles/memory_manager.dir/build.make src/memory_manager/CMakeFiles/memory_manager.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=5,6,7,8 "Finished codegen for target memory_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=7,8,9,10 "Finished codegen for target memory_manager"
 .PHONY : src/memory_manager/CMakeFiles/memory_manager.dir/codegen
 
 # clean rule for target.
@@ -293,7 +299,7 @@ src/memory_manager/CMakeFiles/memory_manager.dir/clean:
 src/mpointers/CMakeFiles/mpointers.dir/all: src/proto/CMakeFiles/proto_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f src/mpointers/CMakeFiles/mpointers.dir/build.make src/mpointers/CMakeFiles/mpointers.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/mpointers/CMakeFiles/mpointers.dir/build.make src/mpointers/CMakeFiles/mpointers.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=9,10 "Built target mpointers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=11,12 "Built target mpointers"
 .PHONY : src/mpointers/CMakeFiles/mpointers.dir/all
 
 # Build rule for subdir invocation for target.
@@ -310,7 +316,7 @@ mpointers: src/mpointers/CMakeFiles/mpointers.dir/rule
 # codegen rule for target.
 src/mpointers/CMakeFiles/mpointers.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/mpointers/CMakeFiles/mpointers.dir/build.make src/mpointers/CMakeFiles/mpointers.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=9,10 "Finished codegen for target mpointers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=11,12 "Finished codegen for target mpointers"
 .PHONY : src/mpointers/CMakeFiles/mpointers.dir/codegen
 
 # clean rule for target.
@@ -327,7 +333,7 @@ tests/CMakeFiles/linked_list_test.dir/all: src/memory_manager/CMakeFiles/memory_
 tests/CMakeFiles/linked_list_test.dir/all: src/mpointers/CMakeFiles/mpointers.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=1,2 "Built target linked_list_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=3,4 "Built target linked_list_test"
 .PHONY : tests/CMakeFiles/linked_list_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -342,15 +348,81 @@ linked_list_test: tests/CMakeFiles/linked_list_test.dir/rule
 .PHONY : linked_list_test
 
 # codegen rule for target.
-tests/CMakeFiles/linked_list_test.dir/codegen:
+tests/CMakeFiles/linked_list_test.dir/codegen: src/proto/CMakeFiles/proto_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=1,2 "Finished codegen for target linked_list_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=3,4 "Finished codegen for target linked_list_test"
 .PHONY : tests/CMakeFiles/linked_list_test.dir/codegen
 
 # clean rule for target.
 tests/CMakeFiles/linked_list_test.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/clean
 .PHONY : tests/CMakeFiles/linked_list_test.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/simple_test.dir
+
+# All Build rule for target.
+tests/CMakeFiles/simple_test.dir/all: src/proto/CMakeFiles/proto_lib.dir/all
+tests/CMakeFiles/simple_test.dir/all: src/memory_manager/CMakeFiles/memory_manager.dir/all
+tests/CMakeFiles/simple_test.dir/all: src/mpointers/CMakeFiles/mpointers.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=17,18 "Built target simple_test"
+.PHONY : tests/CMakeFiles/simple_test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/simple_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thedegeo/Documents/T/MPointers2/build/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/simple_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thedegeo/Documents/T/MPointers2/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/simple_test.dir/rule
+
+# Convenience name for target.
+simple_test: tests/CMakeFiles/simple_test.dir/rule
+.PHONY : simple_test
+
+# codegen rule for target.
+tests/CMakeFiles/simple_test.dir/codegen: src/proto/CMakeFiles/proto_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=17,18 "Finished codegen for target simple_test"
+.PHONY : tests/CMakeFiles/simple_test.dir/codegen
+
+# clean rule for target.
+tests/CMakeFiles/simple_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/clean
+.PHONY : tests/CMakeFiles/simple_test.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/grpc_test.dir
+
+# All Build rule for target.
+tests/CMakeFiles/grpc_test.dir/all: src/proto/CMakeFiles/proto_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=1,2 "Built target grpc_test"
+.PHONY : tests/CMakeFiles/grpc_test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/grpc_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thedegeo/Documents/T/MPointers2/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/grpc_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thedegeo/Documents/T/MPointers2/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/grpc_test.dir/rule
+
+# Convenience name for target.
+grpc_test: tests/CMakeFiles/grpc_test.dir/rule
+.PHONY : grpc_test
+
+# codegen rule for target.
+tests/CMakeFiles/grpc_test.dir/codegen: src/proto/CMakeFiles/proto_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/thedegeo/Documents/T/MPointers2/build/CMakeFiles --progress-num=1,2 "Finished codegen for target grpc_test"
+.PHONY : tests/CMakeFiles/grpc_test.dir/codegen
+
+# clean rule for target.
+tests/CMakeFiles/grpc_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/clean
+.PHONY : tests/CMakeFiles/grpc_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -13,5 +13,7 @@
 /home/thedegeo/Documents/T/MPointers2/build/src/mpointers/CMakeFiles/edit_cache.dir
 /home/thedegeo/Documents/T/MPointers2/build/src/mpointers/CMakeFiles/rebuild_cache.dir
 /home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/linked_list_test.dir
+/home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/simple_test.dir
+/home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/grpc_test.dir
 /home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/edit_cache.dir
 /home/thedegeo/Documents/T/MPointers2/build/tests/CMakeFiles/rebuild_cache.dir

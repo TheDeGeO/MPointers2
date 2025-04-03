@@ -130,6 +130,58 @@ linked_list_test/fast:
 	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/build
 .PHONY : linked_list_test/fast
 
+# Convenience name for target.
+tests/CMakeFiles/simple_test.dir/rule:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/simple_test.dir/rule
+.PHONY : tests/CMakeFiles/simple_test.dir/rule
+
+# Convenience name for target.
+simple_test: tests/CMakeFiles/simple_test.dir/rule
+.PHONY : simple_test
+
+# fast build rule for target.
+simple_test/fast:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/build
+.PHONY : simple_test/fast
+
+# Convenience name for target.
+tests/CMakeFiles/grpc_test.dir/rule:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/grpc_test.dir/rule
+.PHONY : tests/CMakeFiles/grpc_test.dir/rule
+
+# Convenience name for target.
+grpc_test: tests/CMakeFiles/grpc_test.dir/rule
+.PHONY : grpc_test
+
+# fast build rule for target.
+grpc_test/fast:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/build
+.PHONY : grpc_test/fast
+
+grpc_test.o: grpc_test.cpp.o
+.PHONY : grpc_test.o
+
+# target to build an object file
+grpc_test.cpp.o:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/grpc_test.cpp.o
+.PHONY : grpc_test.cpp.o
+
+grpc_test.i: grpc_test.cpp.i
+.PHONY : grpc_test.i
+
+# target to preprocess a source file
+grpc_test.cpp.i:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/grpc_test.cpp.i
+.PHONY : grpc_test.cpp.i
+
+grpc_test.s: grpc_test.cpp.s
+.PHONY : grpc_test.s
+
+# target to generate assembly for a file
+grpc_test.cpp.s:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/grpc_test.cpp.s
+.PHONY : grpc_test.cpp.s
+
 linked_list_test.o: linked_list_test.cpp.o
 .PHONY : linked_list_test.o
 
@@ -154,6 +206,30 @@ linked_list_test.cpp.s:
 	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/linked_list_test.cpp.s
 .PHONY : linked_list_test.cpp.s
 
+simple_test.o: simple_test.cpp.o
+.PHONY : simple_test.o
+
+# target to build an object file
+simple_test.cpp.o:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/simple_test.cpp.o
+.PHONY : simple_test.cpp.o
+
+simple_test.i: simple_test.cpp.i
+.PHONY : simple_test.i
+
+# target to preprocess a source file
+simple_test.cpp.i:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/simple_test.cpp.i
+.PHONY : simple_test.cpp.i
+
+simple_test.s: simple_test.cpp.s
+.PHONY : simple_test.s
+
+# target to generate assembly for a file
+simple_test.cpp.s:
+	cd /home/thedegeo/Documents/T/MPointers2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/simple_test.cpp.s
+.PHONY : simple_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,10 +238,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... grpc_test"
 	@echo "... linked_list_test"
+	@echo "... simple_test"
+	@echo "... grpc_test.o"
+	@echo "... grpc_test.i"
+	@echo "... grpc_test.s"
 	@echo "... linked_list_test.o"
 	@echo "... linked_list_test.i"
 	@echo "... linked_list_test.s"
+	@echo "... simple_test.o"
+	@echo "... simple_test.i"
+	@echo "... simple_test.s"
 .PHONY : help
 
 

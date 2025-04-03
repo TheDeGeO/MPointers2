@@ -181,6 +181,32 @@ linked_list_test/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/linked_list_test.dir/build.make tests/CMakeFiles/linked_list_test.dir/build
 .PHONY : linked_list_test/fast
 
+#=============================================================================
+# Target rules for targets named simple_test
+
+# Build rule for target.
+simple_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_test
+.PHONY : simple_test
+
+# fast build rule for target.
+simple_test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/simple_test.dir/build.make tests/CMakeFiles/simple_test.dir/build
+.PHONY : simple_test/fast
+
+#=============================================================================
+# Target rules for targets named grpc_test
+
+# Build rule for target.
+grpc_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 grpc_test
+.PHONY : grpc_test
+
+# fast build rule for target.
+grpc_test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/grpc_test.dir/build.make tests/CMakeFiles/grpc_test.dir/build
+.PHONY : grpc_test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,11 +215,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... grpc_test"
 	@echo "... linked_list_test"
 	@echo "... mem-mgr"
 	@echo "... memory_manager"
 	@echo "... mpointers"
 	@echo "... proto_lib"
+	@echo "... simple_test"
 .PHONY : help
 
 

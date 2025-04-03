@@ -155,4 +155,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/memory_manager/CMakeFiles/memory_manager.dir/DependInfo.cmake"
   "src/mpointers/CMakeFiles/mpointers.dir/DependInfo.cmake"
   "tests/CMakeFiles/linked_list_test.dir/DependInfo.cmake"
+  "tests/CMakeFiles/simple_test.dir/DependInfo.cmake"
+  "tests/CMakeFiles/grpc_test.dir/DependInfo.cmake"
   )

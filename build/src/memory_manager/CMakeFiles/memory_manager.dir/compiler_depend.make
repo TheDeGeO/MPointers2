@@ -4,10 +4,6 @@
 src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/thedegeo/Documents/T/MPointers2/src/memory_manager/memory_manager.cpp \
   src/proto/memory_service.grpc.pb.h \
   src/proto/memory_service.pb.h \
-  src/proto/memory_service.grpc.pb.h \
-  src/proto/memory_service.pb.h \
-  /home/thedegeo/Documents/T/MPointers2/src/memory_manager/garbage_collector.h \
-  /home/thedegeo/Documents/T/MPointers2/src/memory_manager/memory_block.h \
   /home/thedegeo/Documents/T/MPointers2/src/memory_manager/memory_manager.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -138,6 +134,10 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
   /usr/include/c++/14.2.1/bits/exception_ptr.h \
   /usr/include/c++/14.2.1/bits/forward_list.h \
   /usr/include/c++/14.2.1/bits/forward_list.tcc \
+  /usr/include/c++/14.2.1/bits/fs_dir.h \
+  /usr/include/c++/14.2.1/bits/fs_fwd.h \
+  /usr/include/c++/14.2.1/bits/fs_ops.h \
+  /usr/include/c++/14.2.1/bits/fs_path.h \
   /usr/include/c++/14.2.1/bits/fstream.tcc \
   /usr/include/c++/14.2.1/bits/functexcept.h \
   /usr/include/c++/14.2.1/bits/functional_hash.h \
@@ -228,6 +228,7 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
   /usr/include/c++/14.2.1/climits \
   /usr/include/c++/14.2.1/clocale \
   /usr/include/c++/14.2.1/cmath \
+  /usr/include/c++/14.2.1/codecvt \
   /usr/include/c++/14.2.1/compare \
   /usr/include/c++/14.2.1/concepts \
   /usr/include/c++/14.2.1/cstddef \
@@ -250,6 +251,7 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
   /usr/include/c++/14.2.1/ext/numeric_traits.h \
   /usr/include/c++/14.2.1/ext/string_conversions.h \
   /usr/include/c++/14.2.1/ext/type_traits.h \
+  /usr/include/c++/14.2.1/filesystem \
   /usr/include/c++/14.2.1/forward_list \
   /usr/include/c++/14.2.1/fstream \
   /usr/include/c++/14.2.1/functional \
@@ -752,8 +754,6 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/local/include/grpc/support/time.h:
 
-/usr/local/include/grpc/support/log.h:
-
 /usr/local/include/grpc/support/cpu.h:
 
 /usr/local/include/grpc/support/atm.h:
@@ -800,6 +800,14 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/local/include/google/protobuf/serial_arena.h:
 
+/usr/local/include/grpc/grpc_security.h:
+
+/usr/local/include/google/protobuf/repeated_ptr_field.h:
+
+/usr/local/include/google/protobuf/repeated_field.h:
+
+/usr/local/include/google/protobuf/reflection.h:
+
 /usr/include/math.h:
 
 /usr/include/c++/14.2.1/iomanip:
@@ -817,10 +825,6 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 /usr/include/asm/posix_types.h:
 
 /usr/include/bits/time.h:
-
-/usr/include/c++/14.2.1/cwctype:
-
-/usr/local/include/absl/base/optimization.h:
 
 /usr/include/c++/14.2.1/cwchar:
 
@@ -877,10 +881,6 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 /usr/include/c++/14.2.1/bits/string_view.tcc:
 
 /usr/local/include/google/protobuf/extension_set.h:
-
-/usr/include/c++/14.2.1/iosfwd:
-
-/usr/include/c++/14.2.1/bits/streambuf.tcc:
 
 /usr/include/c++/14.2.1/variant:
 
@@ -942,19 +942,11 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/c++/14.2.1/tr1/bessel_function.tcc:
 
-/usr/include/assert.h:
-
-/usr/local/include/google/protobuf/generated_message_tctable_decl.h:
-
 /usr/include/c++/14.2.1/bits/refwrap.h:
 
 /usr/local/include/absl/numeric/internal/bits.h:
 
 /usr/include/c++/14.2.1/bits/quoted_string.h:
-
-/usr/include/c++/14.2.1/istream:
-
-/usr/include/c++/14.2.1/bits/ptr_traits.h:
 
 /usr/include/c++/14.2.1/bits/unordered_map.h:
 
@@ -967,20 +959,6 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 /usr/include/endian.h:
 
 /usr/include/stdint.h:
-
-/usr/include/c++/14.2.1/bits/node_handle.h:
-
-/usr/local/include/grpcpp/impl/grpc_library.h:
-
-/usr/include/c++/14.2.1/bits/new_allocator.h:
-
-/usr/include/linux/version.h:
-
-/usr/local/include/google/protobuf/endian.h:
-
-/usr/include/c++/14.2.1/iostream:
-
-/usr/include/asm/errno.h:
 
 /usr/include/c++/14.2.1/bits/memory_resource.h:
 
@@ -1020,6 +998,30 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/c++/14.2.1/bits/functexcept.h:
 
+/usr/include/c++/14.2.1/cwctype:
+
+/usr/local/include/absl/base/optimization.h:
+
+/usr/include/c++/14.2.1/bits/fs_path.h:
+
+/home/thedegeo/Documents/T/MPointers2/src/memory_manager/memory_manager.cpp:
+
+/usr/include/c++/14.2.1/bits/cpp_type_traits.h:
+
+/usr/local/include/absl/strings/internal/str_format/constexpr_parser.h:
+
+/usr/include/c++/14.2.1/bits/node_handle.h:
+
+/usr/local/include/grpcpp/impl/grpc_library.h:
+
+/usr/include/c++/14.2.1/bits/new_allocator.h:
+
+/usr/include/linux/version.h:
+
+/usr/local/include/google/protobuf/endian.h:
+
+/usr/include/bits/locale.h:
+
 /usr/include/c++/14.2.1/bits/stl_list.h:
 
 /usr/include/c++/14.2.1/bits/forward_list.h:
@@ -1046,6 +1048,14 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/c++/14.2.1/bits/erase_if.h:
 
+/usr/include/c++/14.2.1/bits/stl_multiset.h:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/local/include/grpcpp/support/client_callback.h:
+
+/usr/local/include/absl/base/internal/per_thread_tls.h:
+
 /usr/include/bits/types/__FILE.h:
 
 /usr/include/features.h:
@@ -1055,6 +1065,10 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 /usr/include/c++/14.2.1/bits/charconv.h:
 
 /usr/include/bits/setjmp.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/c++/14.2.1/thread:
 
 /usr/include/c++/14.2.1/exception:
 
@@ -1078,7 +1092,15 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/c++/14.2.1/bits/algorithmfwd.h:
 
-/usr/include/c++/14.2.1/iterator:
+/usr/local/include/grpc/support/log.h:
+
+/usr/include/c++/14.2.1/filesystem:
+
+/usr/include/c++/14.2.1/set:
+
+/usr/include/asm/errno.h:
+
+/usr/include/c++/14.2.1/iostream:
 
 /usr/include/c++/14.2.1/bits/stl_uninitialized.h:
 
@@ -1106,14 +1128,6 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/bits/types/timer_t.h:
 
-/usr/include/c++/14.2.1/bits/stl_multiset.h:
-
-/usr/include/bits/types/time_t.h:
-
-/usr/local/include/grpcpp/support/client_callback.h:
-
-/usr/local/include/absl/base/internal/per_thread_tls.h:
-
 /usr/include/c++/14.2.1/ext/aligned_buffer.h:
 
 /usr/include/bits/libc-header-start.h:
@@ -1124,9 +1138,11 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/bits/getopt_posix.h:
 
+/usr/include/errno.h:
+
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++locale.h:
 
-/usr/include/errno.h:
+/usr/include/c++/14.2.1/bits/fs_dir.h:
 
 /usr/include/bits/getopt_core.h:
 
@@ -1142,19 +1158,33 @@ src/memory_manager/CMakeFiles/memory_manager.dir/memory_manager.cpp.o: /home/the
 
 /usr/include/bits/long-double.h:
 
-/usr/include/bits/pthreadtypes.h:
-
-/usr/include/c++/14.2.1/bits/basic_string.h:
-
 /usr/include/bits/uio_lim.h:
 
 /usr/include/bits/math-vector.h:
 
-/home/thedegeo/Documents/T/MPointers2/src/memory_manager/memory_block.h:
+/usr/include/c++/14.2.1/bits/ostream_insert.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/syslimits.h:
+/usr/include/c++/14.2.1/cmath:
 
-/usr/include/bits/libm-simd-decl-stubs.h:
+/usr/include/c++/14.2.1/bits/locale_facets.tcc:
+
+/usr/include/c++/14.2.1/concepts:
+
+/usr/local/include/absl/container/fixed_array.h:
+
+/usr/local/include/google/protobuf/stubs/port.h:
+
+/usr/include/c++/14.2.1/bits/exception_defines.h:
+
+/usr/include/c++/14.2.1/bits/stl_tree.h:
+
+/usr/include/c++/14.2.1/bits/atomic_base.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/mmintrin.h:
+
+/usr/include/bits/endian.h:
+
+/usr/local/include/absl/log/internal/strip.h:
 
 /usr/include/asm-generic/types.h:
 
@@ -1196,41 +1226,11 @@ src/proto/memory_service.grpc.pb.h:
 
 /usr/include/c++/14.2.1/ext/type_traits.h:
 
-/usr/include/c++/14.2.1/concepts:
-
-/usr/local/include/absl/container/fixed_array.h:
-
-/usr/local/include/google/protobuf/stubs/port.h:
-
-/usr/include/c++/14.2.1/bits/exception_defines.h:
-
-/usr/include/c++/14.2.1/bits/stl_tree.h:
-
-/usr/include/c++/14.2.1/bits/atomic_base.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/mmintrin.h:
-
-/usr/include/bits/endian.h:
-
-/usr/local/include/absl/log/internal/strip.h:
-
-/usr/include/c++/14.2.1/bits/ostream_insert.h:
-
-/usr/include/c++/14.2.1/cmath:
-
-/usr/include/c++/14.2.1/bits/locale_facets.tcc:
-
 /usr/include/c++/14.2.1/initializer_list:
 
 /usr/include/bits/types/struct_FILE.h:
 
 /usr/include/bits/environments.h:
-
-/home/thedegeo/Documents/T/MPointers2/src/memory_manager/garbage_collector.h:
-
-/usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/14.2.1/thread:
 
 src/proto/memory_service.pb.h:
 
@@ -1256,6 +1256,10 @@ src/proto/memory_service.pb.h:
 
 /usr/local/include/absl/synchronization/internal/kernel_timeout.h:
 
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/c++/14.2.1/bits/basic_string.h:
+
 /usr/local/include/absl/base/options.h:
 
 /usr/include/c++/14.2.1/bits/range_access.h:
@@ -1268,21 +1272,15 @@ src/proto/memory_service.pb.h:
 
 /usr/include/bits/typesizes.h:
 
+/usr/include/bits/libm-simd-decl-stubs.h:
+
 /usr/include/c++/14.2.1/cassert:
-
-/home/thedegeo/Documents/T/MPointers2/src/memory_manager/memory_manager.cpp:
-
-/usr/include/c++/14.2.1/bits/cpp_type_traits.h:
-
-/usr/local/include/absl/strings/internal/str_format/constexpr_parser.h:
 
 /usr/include/bits/endianness.h:
 
 /usr/include/c++/14.2.1/typeinfo:
 
 /usr/include/libintl.h:
-
-/usr/include/bits/locale.h:
 
 /usr/include/bits/local_lim.h:
 
@@ -1362,6 +1360,8 @@ src/proto/memory_service.pb.h:
 
 /usr/include/bits/types/clock_t.h:
 
+/usr/include/c++/14.2.1/bits/fs_ops.h:
+
 /usr/include/bits/types/locale_t.h:
 
 /usr/include/c++/14.2.1/bits/cxxabi_forced.h:
@@ -1436,8 +1436,6 @@ src/proto/memory_service.pb.h:
 
 /usr/local/include/absl/container/internal/container_memory.h:
 
-/usr/local/include/google/protobuf/reflection.h:
-
 /usr/include/c++/14.2.1/array:
 
 /usr/include/c++/14.2.1/type_traits:
@@ -1451,6 +1449,14 @@ src/proto/memory_service.pb.h:
 /usr/include/c++/14.2.1/atomic:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stddef.h:
+
+/usr/local/include/google/protobuf/generated_message_tctable_decl.h:
+
+/usr/include/assert.h:
+
+/usr/include/c++/14.2.1/bits/ptr_traits.h:
+
+/usr/include/c++/14.2.1/istream:
 
 /usr/include/c++/14.2.1/bits/concept_check.h:
 
@@ -1471,6 +1477,8 @@ src/proto/memory_service.pb.h:
 /usr/include/c++/14.2.1/bits/allocated_ptr.h:
 
 /usr/local/include/grpcpp/support/server_interceptor.h:
+
+/usr/include/c++/14.2.1/bits/fs_fwd.h:
 
 /usr/local/include/absl/base/log_severity.h:
 
@@ -1506,6 +1514,12 @@ src/proto/memory_service.pb.h:
 
 /usr/include/c++/14.2.1/bits/cxxabi_init_exception.h:
 
+/usr/include/c++/14.2.1/bits/streambuf.tcc:
+
+/usr/include/c++/14.2.1/iosfwd:
+
+/usr/include/c++/14.2.1/iterator:
+
 /usr/include/c++/14.2.1/bits/exception.h:
 
 /usr/include/c++/14.2.1/map:
@@ -1529,8 +1543,6 @@ src/proto/memory_service.pb.h:
 /usr/include/c++/14.2.1/bits/forward_list.tcc:
 
 /usr/include/c++/14.2.1/ratio:
-
-/usr/include/c++/14.2.1/set:
 
 /usr/include/c++/14.2.1/pstl/pstl_config.h:
 
@@ -1601,6 +1613,8 @@ src/proto/memory_service.pb.h:
 /usr/include/bits/errno.h:
 
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h:
+
+/usr/include/c++/14.2.1/codecvt:
 
 /usr/include/bits/floatn-common.h:
 
@@ -1694,6 +1708,8 @@ src/proto/memory_service.pb.h:
 
 /usr/local/include/absl/log/absl_check.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/syslimits.h:
+
 /usr/local/include/absl/strings/internal/cord_internal.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/xmmintrin.h:
@@ -1735,6 +1751,10 @@ src/proto/memory_service.pb.h:
 /usr/local/include/absl/base/internal/low_level_alloc.h:
 
 /usr/local/include/absl/base/internal/low_level_scheduling.h:
+
+/usr/local/include/google/protobuf/port_undef.inc:
+
+/usr/local/include/absl/base/internal/spinlock_wait.h:
 
 /usr/local/include/absl/container/inlined_vector.h:
 
@@ -1977,13 +1997,3 @@ src/proto/memory_service.pb.h:
 /usr/include/bits/flt-eval-method.h:
 
 /usr/local/include/google/protobuf/port.h:
-
-/usr/local/include/absl/base/internal/spinlock_wait.h:
-
-/usr/local/include/google/protobuf/port_undef.inc:
-
-/usr/local/include/google/protobuf/repeated_field.h:
-
-/usr/local/include/grpc/grpc_security.h:
-
-/usr/local/include/google/protobuf/repeated_ptr_field.h:

@@ -2,6 +2,7 @@
 #include <string>
 #include <grpcpp/grpcpp.h>
 #include "memory_manager.h"
+#include "memory_service.grpc.pb.h"
 
 void print_usage() {
     std::cout << "Usage: ./mem-mgr --port LISTEN_PORT --memsize SIZE_MB --dumpFolder DUMP_FOLDER" << std::endl;
@@ -38,21 +39,48 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        // Create Memory Manager instance
-        MemoryManager manager(memsize, dump_folder);
+        std::cout << "Creating Memory Manager instance..." << std::endl;
+        // Get Memory Manager instance
+        auto manager = MemoryManager::getInstance();
+        
+        // Initialize memory manager
+        if (!manager->initialize(std::stoi(port), memsize, dump_folder)) {
+            std::cerr << "Failed to initialize memory manager" << std::endl;
+            return 1;
+        }
 
+        std::cout << "Setting up gRPC server..." << std::endl;
         // Create gRPC server
         grpc::ServerBuilder builder;
-        builder.AddListeningPort("0.0.0.0:" + port, grpc::InsecureServerCredentials());
-        builder.RegisterService(&manager);
+        
+        // Configure server options
+        builder.SetMaxReceiveMessageSize(-1);
+        builder.SetMaxSendMessageSize(-1);
+        
+        // Bind to all interfaces (0.0.0.0) as in MPointers2.0
+        std::string server_address = "0.0.0.0:" + port;
+        builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+        builder.RegisterService(manager);
 
+        std::cout << "Starting server..." << std::endl;
         std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
-        std::cout << "Memory Manager server listening on port " << port << std::endl;
+        if (!server) {
+            std::cerr << "Failed to start server" << std::endl;
+            return 1;
+        }
+        
+        // Store server in memory manager
+        manager->setServer(std::move(server));
+        
+        std::cout << "Memory Manager server listening on " << server_address << std::endl;
         std::cout << "Memory size: " << (memsize / (1024 * 1024)) << " MB" << std::endl;
         std::cout << "Dump folder: " << dump_folder << std::endl;
 
+        // Start garbage collector
+        manager->start();
+        
         // Wait for the server to shutdown
-        server->Wait();
+        manager->waitForServer();
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;

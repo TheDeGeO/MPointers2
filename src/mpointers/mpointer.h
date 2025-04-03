@@ -7,6 +7,7 @@
 #include "memory_service.grpc.pb.h"
 #include <stdexcept>
 #include <chrono>
+#include <mutex>
 #include <type_traits>
 
 // Forward declaration
