@@ -4,6 +4,8 @@
 src/mpointers/CMakeFiles/mpointers.dir/mpointer.cpp.o: /home/thedegeo/Documents/T/MPointers2/src/mpointers/mpointer.cpp \
   src/proto/memory_service.grpc.pb.h \
   src/proto/memory_service.pb.h \
+  src/proto/memory_service.grpc.pb.h \
+  src/proto/memory_service.pb.h \
   /home/thedegeo/Documents/T/MPointers2/src/mpointers/mpointer.h \
   /home/thedegeo/Documents/T/MPointers2/src/mpointers/node.h \
   /usr/include/alloca.h \

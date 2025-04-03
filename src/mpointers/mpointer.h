@@ -56,6 +56,12 @@ public:
     uint64_t id() const { return id_; }
     bool is_valid() const;
     void reset();
+    
+    // Función especial para deserialización
+    void set_id_directly(uint64_t id) { id_ = id; }
+    
+    // Hacer amigo a la clase Node para que pueda acceder a id_
+    friend struct Node;
 
 private:
     uint64_t id_;

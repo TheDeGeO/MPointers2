@@ -1,6 +1,0 @@
-Memory State Dump
-Total Size: 1073741824 bytes
-Blocks:
-ID: 0, Type: INT, Size: 4, Offset: 0, RefCount: 1, Used: Yes
-Content (hex): 00 00 00 00 
-

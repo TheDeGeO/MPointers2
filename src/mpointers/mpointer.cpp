@@ -4,9 +4,25 @@
 #include <sstream>
 #include <cstring>
 
-// Include the generated proto files directly
-#include "memory_service.pb.h"
-#include "memory_service.grpc.pb.h"
+// Include the generated proto files with correct paths
+#include "../../build/src/proto/memory_service.pb.h"
+#include "../../build/src/proto/memory_service.grpc.pb.h"
+
+// Forward declare the specialization before any use
+template<>
+void MPointer<Node>::set_id_directly(uint64_t id);
+
+// Implementación de la función auxiliar set_mpointer_id para Node
+void Node::set_mpointer_id(MPointer<Node>& ptr, uint64_t id) {
+    // Acceder directamente al campo privado id_ a través de un método amigo
+    ptr.set_id_directly(id);
+}
+
+// Método auxiliar para set_id_directly en MPointer<Node>
+template<>
+void MPointer<Node>::set_id_directly(uint64_t id) {
+    id_ = id;
+}
 
 template<typename T>
 std::unique_ptr<memory_service::MemoryManager::Stub> MPointer<T>::stub_;
@@ -300,6 +316,185 @@ void MPointer<T>::handle_grpc_error(const grpc::Status& status, const std::strin
         ss << "gRPC error in " << operation << ": " << status.error_message();
         throw MPointerException(ss.str());
     }
+}
+
+// Especialización para Node
+template<>
+void MPointer<Node>::set_value(const Node& value) {
+    if (!stub_) {
+        throw MPointerException("MPointer not initialized. Call Init() first.");
+    }
+    
+    // PUNTO CRÍTICO: guardar en NodeStorage
+    std::cout << "NODE SET_VALUE - STORING IN NODESTORAGE: Node " << id_ << ": data=" << value.data 
+              << ", next_id=" << value.next_id << std::endl;
+    NodeStorage::getInstance().store(id_, value.data, value.next_id);
+    
+    // Ahora enviar al servidor remoto
+    memory_service::SetRequest request;
+    memory_service::SetResponse response;
+    grpc::ClientContext context;
+    context.set_deadline(std::chrono::system_clock::now() + timeout_);
+    
+    request.set_id(id_);
+    
+    // Serializar para el almacenamiento remoto - ya no usamos este dato
+    std::vector<uint8_t> serialized = value.serialize();
+    std::string data(reinterpret_cast<char*>(serialized.data()), serialized.size());
+    request.set_value(data);
+    
+    grpc::Status status = stub_->Set(&context, request, &response);
+    if (!status.ok()) {
+        std::stringstream ss;
+        ss << "gRPC error in Set: " << status.error_message();
+        throw MPointerException(ss.str());
+    }
+    
+    if (!response.success()) {
+        throw MPointerException("Failed to set data: " + response.error_message());
+    }
+    
+    std::cout << "Node value set successfully, ID: " << id_ << std::endl;
+}
+
+// Especialización para Node
+template<>
+Node MPointer<Node>::get_value() const {
+    if (!stub_) {
+        throw MPointerException("MPointer not initialized. Call Init() first.");
+    }
+    
+    // PUNTO CRÍTICO: siempre obtener de NodeStorage
+    int data = 0;
+    uint64_t next_id = 0;
+    if (NodeStorage::getInstance().retrieve(id_, data, next_id)) {
+        std::cout << "NODE GET_VALUE - RETRIEVED FROM NODESTORAGE: Node " << id_ << ": data=" << data 
+                  << ", next_id=" << next_id << std::endl;
+        return Node(data, next_id);
+    }
+    
+    // Si no está en caché local, crear un nodo vacío y advertir
+    std::cerr << "NODE GET_VALUE - ERROR: Node " << id_ << " not found in NodeStorage! Returning empty node." << std::endl;
+    return Node(0, 0);
+}
+
+// Especialización de New para Node
+template<>
+MPointer<Node> MPointer<Node>::New() {
+    if (!stub_) {
+        throw MPointerException("MPointer not initialized. Call Init() first.");
+    }
+    
+    MPointer<Node> ptr;
+    memory_service::CreateRequest request;
+    memory_service::CreateResponse response;
+    grpc::ClientContext context;
+    context.set_deadline(std::chrono::system_clock::now() + timeout_);
+    
+    // Set request parameters - tamaño exacto para la estructura Node
+    request.set_size(sizeof(int) + sizeof(uint64_t));  // data + next_id
+    request.set_type(memory_service::CUSTOM);
+    
+    // Llamar al servicio de creación
+    grpc::Status status = stub_->Create(&context, request, &response);
+    if (!status.ok()) {
+        std::stringstream ss;
+        ss << "gRPC error in Create for Node: " << status.error_message();
+        throw MPointerException(ss.str());
+    }
+    
+    if (!response.success()) {
+        throw MPointerException("Failed to create memory block for Node: " + response.error_message());
+    }
+    
+    ptr.id_ = response.id();
+    
+    // Inicializar el nodo con valores por defecto explícitos
+    Node empty_node(0, 0);  // data=0, next_id=0
+    
+    // Serializar e inicializar inmediatamente el nodo
+    ptr.set_value(empty_node);
+    
+    std::cout << "Created new Node with ID: " << ptr.id_ << std::endl;
+    
+    return ptr;
+}
+
+// Add a specialization for operator= for MPointer<Node>
+template<>
+MPointer<Node>& MPointer<Node>::operator=(const Node& value) {
+    check_connection();
+    if (id_ == 0) {
+        *this = New();
+    }
+    std::cout << "NODE OPERATOR= - Setting node " << id_ << " to data=" << value.data 
+              << ", next_id=" << value.next_id << std::endl;
+    
+    // Use NodeStorage directly
+    NodeStorage::getInstance().store(id_, value.data, value.next_id);
+    
+    // Also call set_value for remote storage
+    set_value(value);
+    
+    return *this;
+}
+
+// Especialización del operador * para Node
+template<>
+Node& MPointer<Node>::operator*() {
+    check_connection();
+    if (id_ == 0) {
+        throw MPointerException("Cannot dereference null MPointer");
+    }
+    
+    // Crear un nodo estático que actualiza su valor desde NodeStorage
+    static Node value;
+    int data;
+    uint64_t next_id;
+    
+    // Obtener los datos desde NodeStorage
+    if (NodeStorage::getInstance().retrieve(id_, data, next_id)) {
+        value.data = data;
+        value.next_id = next_id;
+        std::cout << "NODE OPERATOR* - Retrieved from NodeStorage: Node " << id_ 
+                  << ": data=" << data << ", next_id=" << next_id << std::endl;
+    } else {
+        std::cerr << "NODE OPERATOR* - WARNING: Node " << id_ << " not found in NodeStorage!" << std::endl;
+        // Devolver un nodo vacío si no se encuentra en NodeStorage
+        value.data = 0;
+        value.next_id = 0;
+    }
+    
+    return value;
+}
+
+// Especialización del operador * const para Node
+template<>
+const Node& MPointer<Node>::operator*() const {
+    check_connection();
+    if (id_ == 0) {
+        throw MPointerException("Cannot dereference null MPointer");
+    }
+    
+    // Crear un nodo estático que actualiza su valor desde NodeStorage
+    static Node value;
+    int data;
+    uint64_t next_id;
+    
+    // Obtener los datos desde NodeStorage
+    if (NodeStorage::getInstance().retrieve(id_, data, next_id)) {
+        value.data = data;
+        value.next_id = next_id;
+        std::cout << "NODE OPERATOR* CONST - Retrieved from NodeStorage: Node " << id_ 
+                  << ": data=" << data << ", next_id=" << next_id << std::endl;
+    } else {
+        std::cerr << "NODE OPERATOR* CONST - WARNING: Node " << id_ << " not found in NodeStorage!" << std::endl;
+        // Devolver un nodo vacío si no se encuentra en NodeStorage
+        value.data = 0;
+        value.next_id = 0;
+    }
+    
+    return value;
 }
 
 // Explicit template instantiations

@@ -555,4 +555,6 @@ src/mpointers/CMakeFiles/mpointers.dir/mpointer.cpp.o: \
  /usr/local/include/grpcpp/support/proto_buffer_reader.h \
  /usr/local/include/grpcpp/support/proto_buffer_writer.h \
  /usr/local/include/grpcpp/support/stub_options.h \
- /home/thedegeo/Documents/T/MPointers2/src/mpointers/node.h
+ /home/thedegeo/Documents/T/MPointers2/src/mpointers/node.h \
+ /home/thedegeo/Documents/T/MPointers2/src/mpointers/../../build/src/proto/memory_service.pb.h \
+ /home/thedegeo/Documents/T/MPointers2/src/mpointers/../../build/src/proto/memory_service.grpc.pb.h
