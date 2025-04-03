@@ -25,7 +25,7 @@ A memory management system consisting of two main components: a Memory Manager s
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/TheDeGeO/MPointers2
 cd MPointers2
 ```
 
