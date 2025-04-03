@@ -57,8 +57,8 @@ int main(int argc, char* argv[]) {
         builder.SetMaxReceiveMessageSize(-1);
         builder.SetMaxSendMessageSize(-1);
         
-        // Bind to all interfaces (0.0.0.0) as in MPointers2.0
-        std::string server_address = "0.0.0.0:" + port;
+        // Bind to localhost interface instead of all interfaces
+        std::string server_address = "localhost:" + port;
         builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
         builder.RegisterService(manager);
 
