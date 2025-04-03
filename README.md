@@ -10,6 +10,7 @@ A memory management system consisting of two main components: a Memory Manager s
 - Memory defragmentation
 - gRPC-based communication between components
 - Memory state dumps for debugging
+- NodeStorage for persistent node data management
 
 ## Building the Project
 
@@ -22,18 +23,24 @@ A memory management system consisting of two main components: a Memory Manager s
 
 ### Build Steps
 
-1. Create a build directory:
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd MPointers2
+```
+
+2. Create a build directory:
 ```bash
 mkdir build
 cd build
 ```
 
-2. Configure the project:
+3. Configure the project:
 ```bash
 cmake ..
 ```
 
-3. Build the project:
+4. Build the project:
 ```bash
 make
 ```
@@ -76,24 +83,17 @@ The project includes a test that demonstrates the use of MPointers to implement 
 ./linked_list_test
 ```
 
-## Project Structure
+### Testing
 
-- `src/memory_manager/`: Memory Manager service implementation
-- `src/mpointers/`: MPointers library implementation
-- `src/proto/`: Protocol Buffers definitions
-- `tests/`: Test programs
-
-## Design Patterns Used
-
-- Singleton (for MPointer static initialization)
-- Factory Method (for creating new MPointers)
-- Observer (for garbage collection)
-- Proxy (for the MPointer interface)
+The project includes several test programs:
+- `linked_list_test`: Demonstrates MPointers with a linked list implementation
+- `simple_test`: Basic MPointers functionality tests
+- `grpc_test`: gRPC communication tests
 
 ## Memory Management
 
 The Memory Manager uses a reference counting system for automatic memory management. When a memory block's reference count reaches zero, it is automatically freed by the garbage collector.
 
-## License
+### NodeStorage
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+The system includes a NodeStorage component that provides persistent storage for node data, ensuring that node values are properly maintained across operations.
